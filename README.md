@@ -2,9 +2,23 @@
 a very simple OOP for JavaScript with serialization/deserialization ablity.
 
 ## define class
+```
 SObject.define(className,parentClassConstructor,initFunction,staticFieldOrMethod);
+```
 return constructor
-#### example
+## new object
+```
+let object = new ClassConstructor();
+```
+## serialize object
+```
+let json = JSON.stringify(object);
+```
+## deserialize json
+```
+let object1 = JSON.parse(json,SObject.ObjectReviver);
+```
+## example
 ```
 let AClass = SObject.define("AClass");
 
