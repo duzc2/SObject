@@ -19,8 +19,14 @@ SObject.prototype.toJSON = function(){
     return Object.assign(this,add);
 }
 SObject.define = function(name,parent,constructor,staticFields){
+    if(typeof(name)!=='string'){
+        throw 'name of class must be string.'
+    }
     if(!parent){
         parent = SObject;
+    }
+    if(!constructor){
+        constructor = function(){};
     }
     let SOConstructor = function(){
         parent.call(this);
