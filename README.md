@@ -1,6 +1,8 @@
 # SObject
 a very simple OOP for JavaScript with serialization/deserialization ablity.
 
+https://github.com/duzc2/SObject
+
 ## define class
 ```
 SObject.define(className,parentClassConstructor,initFunction,staticFieldOrMethod);
