@@ -1,5 +1,40 @@
+# Serializable
+a very simple class mix-ins for serialization/deserialization class object.
+
+## Mark a class as Serializable
+```
+Serializable(class);
+```
+## Serialize a object
+```
+let json = JSON.stringify(obj);
+```
+## Example
+for a class A:
+```
+class A {
+    constructor() {
+        this.F = 'a';
+        // Object.assign(this, Serializable);
+    }
+    say() {
+        console.log('hello ~' + this.F);
+    }
+}
+Serializable(A);// mark the class A as Serializable
+
+let a = new A();
+```
+```
+// Serialize the object to json string.
+let json = JSON.stringify(a);
+// Deserialize the json string to object of class A.
+let a1 = JSON.parse(json, Deserializer);
+```
+
+
 # SObject
-a very simple OOP for JavaScript with serialization/deserialization ablity.
+a very simple OOP for JavaScript with serialization/deserialization ablity via prototype.
 
 https://github.com/duzc2/SObject
 
