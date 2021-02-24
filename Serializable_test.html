@@ -26,6 +26,24 @@
         a1.F = 'c';
         a1.say();
         a.say();
+
+        class B extends A{
+            constructor(){
+                super();
+                this.G = 'g';
+            }
+            sayHi(){
+                console.log('hi~ '+this.G);
+            }
+        }
+        Serializable(B);
+        let b = new B();
+        let b1 = JSON.parse(JSON.stringify(b),Deserializer);
+        b1.G = 'gg';
+        console.log(b);
+        console.log(b1);
+        b.sayHi();
+        b1.sayHi();
     </script>
 </body>
 

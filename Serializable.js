@@ -11,6 +11,9 @@ let Deserializer = function (k, v) {
     if (v['$__type']) {
         let className = v['$__type'];
         let constructor = Serializable.SerializableClasses[className];
+        if(!constructor){
+            throw Error('class "'+className +'" can\'t be deserialized.' );
+        }
         let self = new constructor();
         return Object.assign(self, v);
     }
